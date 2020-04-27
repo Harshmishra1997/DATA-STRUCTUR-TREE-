@@ -1,0 +1,123 @@
+import java.util.*;
+
+class Traversal
+
+{
+    
+	static Node root;
+    
+public void preOrder(Node root)
+  
+  	{
+  
+  	if(root!=null)
+      
+  	{	
+          
+ 	     System.out.println(root.data+" ");
+           
+                         preOrder(root.left);
+  
+                          preOrder(root.right);
+      
+   	}
+
+    }
+
+    public void inOrder(Node root)
+
+    {
+ 
+       if(root!=null)
+  
+      	{
+    
+                        preOrder(root.left);
+     
+       	   System.out.println(root.data+" ");
+     
+        	   preOrder(root.right);
+  
+	 }
+
+    }
+
+  public void postOrder(Node root)
+
+    {
+     
+	   if(root!=null)
+   
+   	  {
+        
+    	     preOrder(root.left);
+     
+        	    preOrder(root.right);
+     
+       	   System.out.println(root.data+" ");
+ 
+    	  }
+   
+ }
+  
+ public static void main(String args[])
+    
+{
+    
+   	 Traversal t=new Traversal();
+         
+      
+   	t.root=new Node(1);
+      
+   	t.root.left=new Node(2);
+     
+    	t.root.right=new Node(3);
+         
+	t.root.left.left=new Node(4);
+     
+   	 t.root.left.right=new Node(5);
+  
+       	t.root.right.left=new Node(6);
+  
+       	t.root.right.right=new Node(7);
+
+         
+
+         	System.out.println("The preOrder traversal");
+ 
+        	t.preOrder(root);
+         
+     
+
+    	System.out.println("The inOrder traversal");
+       
+  	t.inOrder(root);
+         
+ 
+  
+      	System.out.println("The postoOrder traversal");
+    
+     	t.postOrder(root);
+    }
+
+}
+
+class Node
+{
+       
+	 int data;
+     
+  	 Node left , right;
+    
+    	Node(int data)
+	{	
+      
+     	 this.data=data;
+            
+	left=right=null;
+       
+ }
+
+    }
+T.C=O(N);
+S.C=O(N);
